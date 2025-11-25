@@ -2,7 +2,11 @@
 
 /* Page Hero */
 .page-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-700) 0%,
+    var(--bs-primary) 100%
+  );
   padding: 140px 0 80px;
   color: white;
   text-align: center;
@@ -429,7 +433,11 @@
 
 /* About CTA */
 .about-cta {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+  background: linear-gradient(
+    135deg,
+    var(--brand-primary-700) 0%,
+    var(--bs-primary) 100%
+  );
   padding: 80px 0;
   color: white;
   text-align: center;
