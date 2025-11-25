@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %> - Phát triển thể thao Việt Nam
+    </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/home/home.css' />
+    <link rel='stylesheet' href='/stylesheets/layout/header.css' />
+</head>
+
+<body>
+    <%- include('../layout/header') %>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section bg-primary text-white d-flex align-items-center"
+            style="min-height: 100vh;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">CÔNG TY TNHH PHÁT TRIỂN THỂ THAO VUIDOKAN</h1>
+                        <p class="lead mb-3">Đồng hành cùng ước mơ thể thao Việt Nam</p>
+                        <p class="fs-5 mb-4 opacity-75">
+                            Chúng tôi cam kết mang đến những giải pháp thể thao toàn diện,
+                            từ thiết bị chuyên nghiệp đến chương trình đào tạo chất lượng cao.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="#services" class="btn btn-primary btn-lg px-4">Khám phá dịch vụ</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Liên hệ ngay</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <i class="bi bi-trophy-fill" style="font-size: 15rem; opacity: 0.1;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-light d-flex align-items-center">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Về Chúng Tôi</h2>
+                        <p class="lead text-muted">Vuidokan - Nơi ươm mầm những tài năng thể thao</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="h2 fw-bold text-dark mb-3">Sứ mệnh của chúng tôi</h3>
+                        <p class="fs-5 mb-4 text-muted">
+                            Công ty TNHH Phát triển Thể thao Vuidokan được thành lập với sứ mệnh
+                            nâng cao chất lượng và phổ biến các hoạt động thể thao tại Việt Nam.
+                            Chúng tôi tin rằng thể thao không chỉ là sự rèn luyện thể chất mà còn
+                            là cầu nối văn hóa, tinh thần đoàn kết và ý chí vượt khó.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                                    <span>Thiết bị thể thao chất lượng cao</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                                    <span>Đội ngũ huấn luyện viên chuyên nghiệp</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                                    <span>Chương trình đào tạo khoa học</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                                    <span>Hỗ trợ tư vấn 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="card text-center border-0 shadow-sm">
+                                    <div class="card-body py-2">
+                                        <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
+                                        <h4 class="fw-bold">500+</h4>
+                                        <p class="text-muted mb-0">Học viên đã đào tạo</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card text-center border-0 shadow-sm">
+                                    <div class="card-body py-2">
+                                        <i class="bi bi-award-fill text-primary fs-1 mb-3"></i>
+                                        <h4 class="fw-bold">50+</h4>
+                                        <p class="text-muted mb-0">Giải thưởng đạt được</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card text-center border-0 shadow-sm">
+                                    <div class="card-body py-2">
+                                        <i class="bi bi-calendar-fill text-primary fs-1 mb-3"></i>
+                                        <h4 class="fw-bold">5+</h4>
+                                        <p class="text-muted mb-0">Năm kinh nghiệm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="d-flex align-items-center">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Dịch Vụ Của Chúng Tôi</h2>
+                        <p class="lead text-muted">Giải pháp thể thao toàn diện cho mọi đối tượng</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                    style="width: 80px; height: 80px;">
+                                    <i class="bi bi-dribbble text-primary fs-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-3">Đào Tạo Bóng Đá</h5>
+                                <p class="text-muted mb-4">Chương trình đào tạo bóng đá chuyên nghiệp cho mọi lứa tuổi,
+                                    từ cơ bản đến nâng cao.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Kỹ thuật cơ bản</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Chiến thuật thi đấu
+                                    </li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Rèn luyện thể lực</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Thi đấu thực tế</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                    style="width: 80px; height: 80px;">
+                                    <i class="bi bi-water text-primary fs-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-3">Bơi Lội</h5>
+                                <p class="text-muted mb-4">Hồ bơi chuẩn Olympic với các lớp học từ cơ bản đến chuyên
+                                    nghiệp.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Kiểu bơi cơ bản</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Kỹ thuật hô hấp</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Sức bền và tốc độ</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>An toàn dưới nước</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                    style="width: 80px; height: 80px;">
+                                    <i class="bi bi-person-running text-primary fs-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-3">Thể Dục Thể Thao</h5>
+                                <p class="text-muted mb-4">Các khóa học thể dục, yoga, aerobic giúp nâng cao sức khỏe và
+                                    thể lực.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Yoga & Pilates</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Aerobic</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Cardio Training</li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Flexibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                    style="width: 80px; height: 80px;">
+                                    <i class="bi bi-trophy text-primary fs-2"></i>
+                                </div>
+                                <h5 class="fw-bold mb-3">Tổ Chức Sự Kiện</h5>
+                                <p class="text-muted mb-4">Tổ chức các giải đấu, sự kiện thể thao chuyên nghiệp và uy
+                                    tín.</p>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Giải đấu chuyên nghiệp
+                                    </li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Team Building</li>
+                                    <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Sự kiện doanh nghiệp
+                                    </li>
+                                    <li><i class="bi bi-check text-success me-2"></i>Lễ hội thể thao</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-light d-flex align-items-center">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Liên Hệ Với Chúng Tôi</h2>
+                        <p class="lead text-muted">Hãy để Vuidokan đồng hành cùng hành trình thể thao của bạn</p>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <h4 class="fw-bold mb-4">Gửi thông tin liên hệ</h4>
+                                <form id="contactForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="name" class="form-label fw-semibold">Họ và tên *</label>
+                                            <input type="text" class="form-control form-control-lg" id="name"
+                                                name="name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phone" class="form-label fw-semibold">Số điện thoại *</label>
+                                            <input type="tel" class="form-control form-control-lg" id="phone"
+                                                name="phone" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="email" class="form-label fw-semibold">Email *</label>
+                                            <input type="email" class="form-control form-control-lg" id="email"
+                                                name="email" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="service" class="form-label fw-semibold">Dịch vụ quan tâm</label>
+                                            <select class="form-select form-select-lg" id="service" name="service">
+                                                <option value="">Chọn dịch vụ...</option>
+                                                <option value="football">Đào tạo Bóng đá</option>
+                                                <option value="swimming">Đào tạo Bơi lội</option>
+                                                <option value="karate">Đào tạo Karate</option>
+                                                <option value="aerobics">Đào tạo Aerobics</option>
+                                                <option value="other">Khác</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-9">
+                                            <label for="message" class="form-label fw-semibold">Tin nhắn *</label>
+                                            <textarea class="form-control" id="message" name="message" rows="5" required
+                                                placeholder="Chia sẻ về nhu cầu và mong muốn của bạn..."></textarea>
+                                        </div>
+                                        <div class="col-3 mt-5">
+                                            <button type="submit" class="btn btn-danger px-2 w-100">
+                                                <i class="bi bi-send me-2"></i>Gửi tin nhắn
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                style="width: 50px; height: 50px;">
+                                                <i class="bi bi-geo-alt-fill text-primary fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0">Địa chỉ</h5>
+                                                <p class="text-muted mb-0">Văn phòng chính</p>
+                                            </div>
+                                        </div>
+                                        <p class="fw-semibold text-dark mb-0">633/10, Bình An B, Chợ Lách</p>
+                                        <p class="fw-semibold text-dark mb-0">Vĩnh Long</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                style="width: 50px; height: 50px;">
+                                                <i class="bi bi-telephone-fill text-primary fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0">Điện thoại</h5>
+                                                <p class="text-muted mb-0">Hotline</p>
+                                            </div>
+                                        </div>
+                                        <p class="fw-semibold text-dark mb-0">0942 382 898</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                style="width: 50px; height: 50px;">
+                                                <i class="bi bi-envelope-fill text-primary fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0">Email</h5>
+                                                <p class="text-muted mb-0">Liên hệ</p>
+                                            </div>
+                                        </div>
+                                        <p class="fw-semibold text-dark mb-0">info@vuidokan.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-2">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
+                                                style="width: 50px; height: 50px;">
+                                                <i class="bi bi-clock-fill text-primary fs-5"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="fw-bold mb-0">Giờ làm việc</h5>
+                                                <p class="text-muted mb-0">Mở cửa</p>
+                                            </div>
+                                        </div>
+                                        <p class="fw-semibold text-dark mb-1">Thứ 2 - Chủ nhật</p>
+                                        <p class="fw-semibold text-dark mb-0">6:00 - 22:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('../layout/footer') %>
+
+            <!-- Bootstrap JS (nếu cần) -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

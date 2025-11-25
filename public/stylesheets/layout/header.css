@@ -1,0 +1,135 @@
+/* Glassmorphism Header */
+.glass-header {
+  width: 70%;
+  background: rgba(255, 255, 255, 0.15); /* nền trong suốt */
+  backdrop-filter: blur(12px); /* làm mờ nền */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25); /* viền kính */
+  padding: 12px 0;
+  z-index: 9999 !important;
+}
+
+/* Màu chữ trong suốt */
+.glass-header .nav-link,
+.glass-header .navbar-brand {
+  color: #000000 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Navigation Styles */
+.icon-nav {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 44px;
+  justify-content: center;
+}
+
+.icon-nav i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.icon-nav .nav-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Hiệu ứng hover */
+.glass-header .nav-link:hover,
+.icon-nav:hover {
+  color: #ffffff !important;
+  background: rgba(var(--bs-primary-rgb), 0.9);
+  min-width: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-shadow: none;
+}
+
+.icon-nav:hover {
+  justify-content: flex-start;
+}
+
+.icon-nav:hover i {
+  transform: none;
+}
+
+.icon-nav:hover .nav-text {
+  opacity: 1;
+  position: static;
+  transform: none;
+  margin-left: 8px;
+}
+
+/* Link active */
+.glass-header .nav-link.active {
+  font-weight: 600;
+  background-color: rgba(var(--bs-primary-rgb), 0.85);
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+.glass-header .nav-link.active {
+  min-width: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  justify-content: flex-start;
+}
+
+.glass-header .nav-link.active .nav-text {
+  opacity: 1;
+  position: static;
+  transform: none;
+  margin-left: 8px;
+}
+
+.glass-header .nav-link.active i {
+  transform: none;
+}
+
+/* Tùy chỉnh nút navbar mobile */
+.glass-header .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-header .navbar-toggler-icon {
+  filter: brightness(10);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+  .icon-nav {
+    justify-content: flex-start;
+    min-width: auto;
+    padding: 8px 16px;
+  }
+  
+  .icon-nav .nav-text {
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin-left: 8px;
+  }
+  
+  .icon-nav i {
+    transform: none !important;
+  }
+  
+  .icon-nav:hover i {
+    transform: none;
+  }
+}
