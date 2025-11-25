@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - <%= title %></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel='stylesheet' href='/stylesheets/layout/header.css' />
+</head>
+<body>
+    <%- include('../layout/header') %>
+
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-5" style="margin-top: 76px; background: linear-gradient(135deg, #15803d 0%, #22c55e 100%) !important;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold mb-3">Giới Thiệu Về Chúng Tôi</h1>
+                    <p class="lead mb-4">Câu chuyện phát triển thể thao Việt Nam cùng Vuidokan</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center bg-transparent">
+                            <li class="breadcrumb-item"><a href="/" class="text-white-50 text-decoration-none">Trang chủ</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Giới thiệu</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="mb-5">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Câu Chuyện Của Chúng Tôi</h2>
+                        <p class="lead text-muted">Hành trình khởi nghiệp từ tình yêu thể thao</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="fs-5 mb-3">
+                            Được thành lập vào năm 2020, <strong>Công ty TNHH Phát triển Thể thao Vuidokan</strong> 
+                            ra đời từ niềm đam mê và tình yêu sâu sắc với thể thao của đội ngũ sáng lập. 
+                            Chúng tôi nhận thấy nhu cầu ngày càng cao về các dịch vụ thể thao chất lượng 
+                            và cơ sở vật chất hiện đại tại Việt Nam.
+                        </p>
+                        <p class="fs-5 mb-4">
+                            Xuất phát từ một văn phòng nhỏ với 5 nhân viên, Vuidokan đã phát triển thành 
+                            một công ty uy tín với hơn 50 nhân viên, bao gồm huấn luyện viên chuyên nghiệp, 
+                            chuyên gia thể thao và đội ngũ hỗ trợ tận tâm.
+                        </p>
+                        <blockquote class="blockquote border-start border-primary border-4 ps-4 my-4">
+                            <p class="mb-2 fs-5 fst-italic">
+                                "Chúng tôi tin rằng thể thao không chỉ rèn luyện thể chất mà còn góp phần 
+                                xây dựng tính cách, ý chí và tinh thần đoàn kết cho cộng đồng."
+                            </p>
+                            <footer class="blockquote-footer mt-2">
+                                <cite title="Source Title">Ban lãnh đạo Vuidokan</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center p-5 bg-light rounded-3">
+                        <i class="bi bi-building display-1 text-primary mb-3"></i>
+                        <p class="text-muted">Văn phòng đầu tiên của Vuidokan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-5">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="bi bi-bullseye text-primary fs-2"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Sứ Mệnh</h3>
+                            <p class="text-muted">
+                                Nâng cao chất lượng và phổ biến các hoạt động thể thao tại Việt Nam, 
+                                góp phần xây dựng một thế hệ trẻ khỏe mạnh, năng động và có tinh thần 
+                                đoàn kết cao.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-5">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="bi bi-eye text-primary fs-2"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Tầm Nhìn</h3>
+                            <p class="text-muted">
+                                Trở thành công ty hàng đầu Việt Nam trong lĩnh vực phát triển thể thao, 
+                                mở rộng ra khu vực Đông Nam Á vào năm 2030 với các dịch vụ đa dạng 
+                                và chất lượng quốc tế.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body p-5">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="bi bi-heart text-primary fs-2"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Giá Trị Cốt Lõi</h3>
+                            <p class="text-muted mb-3">
+                                <strong class="text-primary">Chuyên nghiệp</strong> - <strong class="text-primary">Tận tâm</strong> - <strong class="text-primary">Sáng tạo</strong>
+                            </p>
+                            <p class="text-muted">
+                                Chúng tôi cam kết mang đến dịch vụ tốt nhất với tinh thần trách nhiệm cao 
+                                và sự đổi mới liên tục.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Đội Ngũ Lãnh Đạo</h2>
+                <p>Những người dẫn dắt Vuidokan hướng tới thành công</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nguyễn Văn An</h4>
+                        <p class="position">Tổng Giám Đốc</p>
+                        <p class="bio">
+                            15 năm kinh nghiệm trong lĩnh vực thể thao. Cựu VĐV bóng đá quốc gia 
+                            với tầm nhìn chiến lược trong phát triển thể thao cộng đồng.
+                        </p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="member-info">
+                        <h4>Trần Thị Bích</h4>
+                        <p class="position">Giám Đốc Đào Tạo</p>
+                        <p class="bio">
+                            Thạc sĩ Khoa học Thể thao, chuyên gia hàng đầu về phương pháp đào tạo 
+                            hiện đại. Đã huấn luyện hơn 1000 vận động viên chuyên nghiệp.
+                        </p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <div class="member-info">
+                        <h4>Lê Hoàng Nam</h4>
+                        <p class="position">Giám Đốc Vận Hành</p>
+                        <p class="bio">
+                            MBA Quản trị Kinh doanh, chuyên gia về tối ưu hóa quy trình và 
+                            quản lý chất lượng dịch vụ. Đảm bảo mọi hoạt động diễn ra hiệu quả.
+                        </p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Milestones -->
+    <section class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2>Thành Tựu & Cột Mốc Quan Trọng</h2>
+                <p>Hành trình phát triển của Vuidokan qua các năm</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h4>Thành lập công ty</h4>
+                        <p>Vuidokan chính thức hoạt động với 5 nhân viên đầu tiên và dịch vụ đào tạo bóng đá cơ bản.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h4>Mở rộng dịch vụ</h4>
+                        <p>Bổ sung thêm bóng rổ, bơi lội và fitness. Đạt 100 học viên đầu tiên và mở chi nhánh thứ 2.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h4>Giải thưởng đầu tiên</h4>
+                        <p>Nhận giải "Doanh nghiệp thể thao tiêu biểu" từ Sở Văn hóa Thể thao TP.HCM.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h4>Đối tác chiến lược</h4>
+                        <p>Ký kết hợp tác với Liên đoàn Bóng đá Việt Nam và 10 trường học công lập.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Mở rộng toàn quốc</h4>
+                        <p>Có mặt tại 3 thành phố lớn với 500+ học viên và đội ngũ 50 nhân viên chuyên nghiệp.</p>
+                    </div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h4>Số hóa dịch vụ</h4>
+                        <p>Ra mắt nền tảng học tập trực tuyến và ứng dụng mobile cho học viên.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Culture -->
+    <section class="company-culture">
+        <div class="container">
+            <div class="culture-content">
+                <div class="culture-text">
+                    <div class="section-header">
+                        <h2>Văn Hóa Công Ty</h2>
+                        <p>Môi trường làm việc năng động và sáng tạo</p>
+                    </div>
+                    <div class="culture-features">
+                        <div class="culture-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Tinh Thần Đồng Đội</h4>
+                                <p>Chúng tôi tin vào sức mạnh của sự hợp tác và hỗ trợ lẫn nhau để đạt được mục tiêu chung.</p>
+                            </div>
+                        </div>
+                        <div class="culture-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h4>Đổi Mới Sáng Tạo</h4>
+                                <p>Khuyến khích nhân viên đưa ra ý tưởng mới và áp dụng công nghệ hiện đại trong công việc.</p>
+                            </div>
+                        </div>
+                        <div class="culture-item">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4>Theo Đuổi Xuất Sắc</h4>
+                                <p>Luôn nỗ lực để cung cấp dịch vụ tốt nhất và không ngừng cải thiện chất lượng.</p>
+                            </div>
+                        </div>
+                        <div class="culture-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <div>
+                                <h4>Cân Bằng Cuộc Sống</h4>
+                                <p>Tạo môi trường làm việc linh hoạt, hỗ trợ nhân viên cân bằng công việc và cuộc sống.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="culture-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>35h</h3>
+                        <p>Tuần làm việc trung bình</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-smile"></i>
+                        <h3>95%</h3>
+                        <p>Nhân viên hài lòng</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>24h</h3>
+                        <p>Đào tạo hàng năm</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-gift"></i>
+                        <h3>15+</h3>
+                        <p>Chế độ phúc lợi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Partners -->
+    <section class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chứng Nhận & Đối Tác</h2>
+                <p>Sự công nhận từ các tổ chức uy tín</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Chứng nhận quản lý chất lượng</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-medal"></i>
+                    <h4>FIFA Certified</h4>
+                    <p>Chứng nhận đào tạo bóng đá quốc tế</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h4>Swimming Australia</h4>
+                    <p>Chứng nhận huấn luyện bơi lội</p>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-basketball-ball"></i>
+                    <h4>FIBA License</h4>
+                    <p>Giấy phép đào tạo bóng rổ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Sẵn Sàng Bắt Đầu Hành Trình Thể Thao?</h2>
+                <p>Hãy để Vuidokan đồng hành cùng bạn trong việc phát triển sức khỏe và kỹ năng thể thao.</p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">Liên hệ ngay</a>
+                    <a href="/services" class="btn btn-secondary">Xem dịch vụ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../layout/footer') %>
+</body>
+</html>

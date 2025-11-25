@@ -1,0 +1,50 @@
+<!-- Header -->
+<header class="navbar navbar-expand-lg glass-header fixed-top rounded-pill mx-auto">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/images/vdk.png" alt="Vuidokan Logo" width="50" height="50" class="me-1">
+            <span class="fw-bold fs-5">CÔNG TY TNHH PHÁT TRIỂN THỂ THAO VUIDOKAN</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav gap-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link icon-nav <% if(page === 'home') { %>active rounded-pill<% } %>" href="/">
+                        <i class="bi bi-house-door"></i>
+                        <span class="nav-text">Trang chủ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-nav <% if(page === 'about') { %>active rounded-pill<% } %>" href="/aboutus">
+                        <i class="bi bi-info-circle"></i>
+                        <span class="nav-text">Giới thiệu</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-nav <% if(page === 'services') { %>active<% } %>" href="/services">
+                        <i class="bi bi-gear"></i>
+                        <span class="nav-text">Dịch vụ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-nav <% if(page === 'news') { %>active<% } %>" href="/news">
+                        <i class="bi bi-newspaper"></i>
+                        <span class="nav-text">Tin tức</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-nav <% if(page === 'contact') { %>active<% } %>" href="/contact">
+                        <i class="bi bi-envelope"></i>
+                        <span class="nav-text">Liên hệ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
