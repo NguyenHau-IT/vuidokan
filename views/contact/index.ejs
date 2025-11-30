@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - <%= title %> - Phát triển thể thao Việt Nam</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Liên hệ với Công ty TNHH Phát triển Thể thao Vuidokan. Đội ngũ chuyên gia sẵn sàng tư vấn các dịch vụ thể thao chuyên nghiệp.">
+    <meta name="keywords"
+        content="liên hệ vuidokan, tư vấn thể thao, dịch vụ thể thao, huấn luyện viên, bóng đá, bơi lội">
+    <meta property="og:title" content="Liên Hệ - Vuidokan">
+    <meta property="og:description"
+        content="Liên hệ ngay để được tư vấn các dịch vụ thể thao chuyên nghiệp từ Vuidokan">
+    <meta property="og:type" content="website">
+
+    <!-- icon tab -->
+    <link rel="icon" type="image/png" href="/images/vdk.png" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/contact/contact.css' />
+    <link rel='stylesheet' href='/stylesheets/layout/header.css' />
+</head>
+
+<body>
+    <%- include('../layout/header') %>
+
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1 class="display-4 fw-bold">Liên Hệ Với Chúng Tôi</h1>
+                    <p class="lead">
+                        Đội ngũ chuyên gia của Vuidokan luôn sẵn sàng tư vấn và hỗ trợ bạn
+                        trong hành trình phát triển thể thao. Hãy liên hệ ngay!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Contact Section -->
+        <section class="contact-main">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm" action="/contact/submit" method="POST">
+                            <h2>Gửi Thông Tin Liên Hệ</h2>
+                            <p>Vui lòng điền thông tin dưới đây, chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+
+                            <!-- Success Message -->
+                            <div id="successMessage" class="success-message" style="display: none;">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span>Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.</span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Họ và tên <span style="color: #e74c3c;">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn"
+                                        required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại <span style="color: #e74c3c;">*</span></label>
+                                    <input type="tel" id="phone" name="phone" placeholder="0987 654 321" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Địa chỉ email <span style="color: #e74c3c;">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="yourname@email.com"
+                                        required>
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Dịch vụ quan tâm</label>
+                                    <select id="service" name="service">
+                                        <option value="">Chọn dịch vụ...</option>
+                                        <option value="football">Đào tạo Bóng đá</option>
+                                        <option value="swimming">Đào tạo Bơi lội</option>
+                                        <option value="fitness">Thể dục thể thao</option>
+                                        <option value="events">Tổ chức sự kiện</option>
+                                        <option value="equipment">Tư vấn thiết bị</option>
+                                        <option value="consultation">Tư vấn chung</option>
+                                        <option value="other">Dịch vụ khác</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Tin nhắn <span style="color: #e74c3c;">*</span></label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Chia sẻ về nhu cầu, mong muốn của bạn hoặc các câu hỏi bạn muốn được tư vấn..."
+                                    required></textarea>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="bi bi-send-fill me-2"></i>
+                                <span class="btn-text">Gửi Thông Tin</span>
+                            </button>
+
+                            <p class="text-center mt-3 text-muted small">
+                                <i class="bi bi-shield-check me-1"></i>
+                                Thông tin của bạn được bảo mật và không chia sẻ với bên thứ ba
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information Sidebar -->
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Địa chỉ văn phòng</h3>
+                                <p class="highlight">633/10, Bình An B, Chợ Lách</p>
+                                <p class="highlight">Tỉnh Vĩnh Long</p>
+                                <p>Văn phòng chính - Mở cửa hàng ngày</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Hotline</h3>
+                                <p class="highlight">0942 382 898</p>
+                                <p>Hỗ trợ khách hàng</p>
+                                <p>6:00 - 22:00 (Thứ 2 - Chủ nhật)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Email liên hệ</h3>
+                                <p class="highlight">info@vuidokan.com</p>
+                                <p>Tư vấn dịch vụ</p>
+                                <p>Phản hồi trong vòng 2-4 giờ</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Mạng xã hội</h3>
+                                <div class="social-links mt-2">
+                                    <a href="#" class="text-decoration-none me-2">
+                                        <i class="bi bi-facebook"></i> Facebook
+                                    </a>
+                                </div>
+                                <div class="social-links">
+                                    <a href="#" class="text-decoration-none me-2">
+                                        <i class="bi bi-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-6 fw-bold text-dark mb-3">Vị Trí Văn Phòng</h2>
+                        <p class="lead text-muted">
+                            Chúng tôi tọa lạc tại vị trí thuận lợi, dễ dàng di chuyển và tiếp cận
+                        </p>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-wrapper"
+                        style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9027.927997225483!2d106.12495784195627!3d10.255523489905487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a9fd8648f7ca7%3A0xe4e9f9209409b470!2zQ3R5IFROSEggUGjDoXQgVHJp4buDbiBUaOG7gyBUaGFvIFZVSURPS0FO!5e1!3m2!1svi!2s!4v1764063319127!5m2!1svi!2s"
+                            width="100%" height="500" style="border:0; border-radius: 20px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Vị trí Công ty TNHH Phát triển Thể thao Vuidokan">
+                        </iframe>
+
+                        <!-- Map overlay with contact info -->
+                        <div class="map-overlay position-absolute top-0 start-0 m-4 p-3 bg-white rounded-3 shadow"
+                            style="max-width: 350px; z-index: 10;">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
+                                    style="width: 40px; height: 40px;">
+                                    <i class="bi bi-geo-alt-fill text-white fs-5"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-0 text-dark">Vuidokan</h5>
+                                    <small class="text-muted">Công ty thể thao</small>
+                                </div>
+                            </div>
+                            <p class="mb-2 text-dark fw-semibold small">
+                                <i class="bi bi-geo-alt text-primary me-1"></i>
+                                633/10, Bình An B, Chợ Lách, Vĩnh Long
+                            </p>
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="badge bg-primary-subtle text-primary px-2 py-1">
+                                    <i class="bi bi-telephone-fill me-1"></i>0942 382 898
+                                </span>
+                            </div>
+                            <div class="d-flex gap-1">
+                                <span class="badge bg-success-subtle text-success px-2 py-1 small">
+                                    <i class="bi bi-clock-fill me-1"></i>Mở cửa: 6:00-22:00
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Map controls -->
+                        <div class="map-controls position-absolute bottom-0 end-0 m-4 d-flex flex-column gap-2"
+                            style="z-index: 10;">
+                            <button type="button" class="btn btn-white btn-sm rounded-circle shadow"
+                                style="width: 40px; height: 40px;" onclick="toggleMapFullscreen()"
+                                title="Xem toàn màn hình">
+                                <i class="bi bi-fullscreen"></i>
+                            </button>
+                            <a href="https://maps.app.goo.gl/n8HnzKUSfnUbZ3V6A" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-primary btn-sm rounded-circle shadow"
+                                style="width: 40px; height: 40px;" title="Mở trong Google Maps">
+                                <i class="bi bi-box-arrow-up-right text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="display-6 fw-bold text-dark mb-3">Câu Hỏi Thường Gặp</h2>
+                        <p class="lead text-muted">
+                            Những câu hỏi phổ biến từ khách hàng về dịch vụ của chúng tôi
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            <span>Vuidokan cung cấp những dịch vụ gì?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer collapse" id="faq1">
+                            <p>
+                                Chúng tôi cung cấp đa dạng dịch vụ thể thao bao gồm: đào tạo bóng đá, bơi lội,
+                                thể dục thể thao, tổ chức sự kiện và cung cấp thiết bị thể thao chất lượng cao.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            <span>Chi phí cho các khóa học như thế nào?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer collapse" id="faq2">
+                            <p>
+                                Chi phí phụ thuộc vào loại khóa học và thời gian đăng ký. Chúng tôi có nhiều gói
+                                học phù hợp với từng đối tượng. Liên hệ để được tư vấn chi tiết về giá cả.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            <span>Có dịch vụ đào tạo cho trẻ em không?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer collapse" id="faq3">
+                            <p>
+                                Có, chúng tôi có các chương trình đào tạo chuyên biệt cho trẻ em từ 5-15 tuổi
+                                với phương pháp giảng dạy phù hợp lứa tuổi và đội ngũ HLV có kinh nghiệm.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            <span>Thời gian hoạt động của trung tâm?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer collapse" id="faq4">
+                            <p>
+                                Trung tâm mở cửa từ 6:00 đến 22:00 hàng ngày, kể cả cuối tuần và ngày lễ.
+                                Chúng tôi linh hoạt sắp xếp lịch học phù hợp với thời gian của học viên.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            <span>Có hỗ trợ đăng ký online không?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer collapse" id="faq5">
+                            <p>
+                                Hiện tại bạn có thể liên hệ qua form trên website, điện thoại hoặc email.
+                                Chúng tôi đang phát triển hệ thống đăng ký online hoàn thiện hơn.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('../layout/footer') %>
+
+            <!-- Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/javascripts/form-handler.js"></script>
+            <script src="/javascripts/contact-form.js"></script>
+            <script>
+                // FAQ Accordion Enhancement
+                document.querySelectorAll('.faq-question').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const isActive = button.classList.contains('active');
+
+                        // Close all other FAQ items
+                        document.querySelectorAll('.faq-question').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+
+                        document.querySelectorAll('.faq-answer').forEach(answer => {
+                            answer.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (!isActive) {
+                            button.classList.add('active');
+                            const target = document.querySelector(button.getAttribute('data-bs-target'));
+                            target.classList.add('active');
+                        }
+                    });
+                });
+
+                // Smooth scroll for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+
+                // Map fullscreen functionality
+                function toggleMapFullscreen() {
+                    const mapWrapper = document.querySelector('.map-wrapper');
+                    const iframe = mapWrapper.querySelector('iframe');
+
+                    if (!document.fullscreenElement) {
+                        if (mapWrapper.requestFullscreen) {
+                            mapWrapper.requestFullscreen();
+                        } else if (mapWrapper.webkitRequestFullscreen) {
+                            mapWrapper.webkitRequestFullscreen();
+                        } else if (mapWrapper.msRequestFullscreen) {
+                            mapWrapper.msRequestFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+                    }
+                }
+
+                // Handle fullscreen changes
+                document.addEventListener('fullscreenchange', function () {
+                    const mapWrapper = document.querySelector('.map-wrapper');
+                    const iframe = mapWrapper.querySelector('iframe');
+
+                    if (document.fullscreenElement) {
+                        // In fullscreen
+                        iframe.style.height = '100vh';
+                        mapWrapper.style.borderRadius = '0';
+                    } else {
+                        // Exit fullscreen
+                        iframe.style.height = '500px';
+                        mapWrapper.style.borderRadius = '20px';
+                    }
+                });
+
+                // Map loading animation
+                document.addEventListener('DOMContentLoaded', function () {
+                    const mapIframe = document.querySelector('.map-wrapper iframe');
+                    if (mapIframe) {
+                        // Add loading overlay
+                        const loadingOverlay = document.createElement('div');
+                        loadingOverlay.className = 'map-loading-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-light rounded-3';
+                        loadingOverlay.style.zIndex = '5';
+                        loadingOverlay.innerHTML = `
+                    <div class="text-center">
+                        <div class="spinner-border text-primary mb-3" role="status">
+                            <span class="visually-hidden">Đang tải...</span>
+                        </div>
+                        <p class="text-muted">Đang tải bản đồ...</p>
+                    </div>
+                `;
+
+                        mapIframe.parentNode.appendChild(loadingOverlay);
+
+                        // Remove loading overlay when map loads
+                        mapIframe.addEventListener('load', function () {
+                            setTimeout(() => {
+                                loadingOverlay.remove();
+                            }, 500);
+                        });
+                    }
+                });
+            </script>
+</body>
+
+</html>

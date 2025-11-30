@@ -7,9 +7,14 @@
     var(--brand-primary-700) 0%,
     var(--bs-primary) 100%
   );
-  padding: 140px 0 80px;
+  padding: 160px 0 80px;
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-overlay {
