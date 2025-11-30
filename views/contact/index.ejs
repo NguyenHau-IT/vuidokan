@@ -163,15 +163,17 @@
                             </div>
                             <div class="contact-info-content">
                                 <h3>Mạng xã hội</h3>
-                                <div class="social-links mt-2">
-                                    <a href="#" class="text-decoration-none me-2">
-                                        <i class="bi bi-facebook"></i> Facebook
-                                    </a>
-                                </div>
-                                <div class="social-links">
-                                    <a href="#" class="text-decoration-none me-2">
-                                        <i class="bi bi-instagram"></i> Instagram
-                                    </a>
+                                <div class="d-flex flex-wrap col-12">
+                                    <div class="social-links col-6">
+                                        <a href="#" class="rounded-4 w-75 text-decoration-none me-2">
+                                            <i class="bi bi-facebook"></i> Facebook
+                                        </a>
+                                    </div>
+                                    <div class="social-links col-6">
+                                        <a href="#" class="rounded-4 w-75 text-decoration-none me-2">
+                                            <i class="bi bi-tiktok"></i> TikTok
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -203,8 +205,8 @@
                         </iframe>
 
                         <!-- Map overlay with contact info -->
-                        <div class="map-overlay position-absolute top-0 start-0 m-4 p-3 bg-white rounded-3 shadow"
-                            style="max-width: 350px; z-index: 10;">
+                        <div class="map-overlay position-absolute top-0 start-0 m-2 p-3 bg-white rounded-3 shadow"
+                            style="max-width: 380px; z-index: 10;">
                             <div class="d-flex align-items-center mb-2">
                                 <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3"
                                     style="width: 40px; height: 40px;">
@@ -232,18 +234,20 @@
                         </div>
 
                         <!-- Map controls -->
-                        <div class="map-controls position-absolute bottom-0 end-0 m-4 d-flex flex-column gap-2"
+                        <div class="map-controls position-absolute bottom-0 end-0 my-3 mx-2 d-flex flex-column"
                             style="z-index: 10;">
-                            <button type="button" class="btn btn-white btn-sm rounded-circle shadow"
+                            <a href="https://maps.app.goo.gl/n8HnzKUSfnUbZ3V6A" target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm rounded-top-4 shadow d-flex align-items-center justify-content-center"
+                                style="width: 40px; height: 40px;" title="Mở trong Google Maps">
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                            <button type="button"
+                                class="btn btn-secondary rounded-bottom-4 shadow d-flex align-items-center justify-content-center"
                                 style="width: 40px; height: 40px;" onclick="toggleMapFullscreen()"
                                 title="Xem toàn màn hình">
                                 <i class="bi bi-fullscreen"></i>
                             </button>
-                            <a href="https://maps.app.goo.gl/n8HnzKUSfnUbZ3V6A" target="_blank"
-                                rel="noopener noreferrer" class="btn btn-primary btn-sm rounded-circle shadow"
-                                style="width: 40px; height: 40px;" title="Mở trong Google Maps">
-                                <i class="bi bi-box-arrow-up-right text-white"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
