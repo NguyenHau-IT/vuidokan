@@ -1,55 +1,31 @@
-// Form handling and validation
+// Form handling and validation - Enhanced version
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form form');
+    // Handle both contact forms (if any other forms exist)
+    const contactForms = document.querySelectorAll('#contactForm, .contact-form form');
     
-    if (contactForm) {
+    contactForms.forEach(form => {
+        if (form) {
+            setupFormValidation(form);
+        }
+    });
+    
+    function setupFormValidation(form) {
         // Form submission handler
-        contactForm.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value.trim();
-            const email = this.querySelector('input[type="email"]').value.trim();
-            const phone = this.querySelector('input[type="tel"]').value.trim();
-            const message = this.querySelector('textarea').value.trim();
-            
-            // Basic validation
-            if (!name || !email || !phone || !message) {
-                showNotification('Vui lòng điền đầy đủ thông tin!', 'error');
+            // Check if this is the main contact form
+            if (form.id === 'contactForm') {
+                // Let the ContactFormHandler take care of this
                 return;
             }
             
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showNotification('Email không hợp lệ!', 'error');
-                return;
-            }
-            
-            // Phone validation (Vietnamese phone number format)
-            const phoneRegex = /^(\+84|84|0)[3|5|7|8|9][0-9]{8}$/;
-            if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
-                showNotification('Số điện thoại không hợp lệ!', 'error');
-                return;
-            }
-            
-            // Simulate form submission
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Đang gửi...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-                showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.', 'success');
-                this.reset();
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 1500);
+            // Handle other forms with legacy method
+            handleLegacyFormSubmission(form);
         });
         
-        // Real-time validation
-        const inputs = contactForm.querySelectorAll('input, textarea');
+        // Real-time validation for all forms
+        const inputs = form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
             input.addEventListener('blur', function() {
                 validateField(this);
@@ -63,25 +39,77 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    function handleLegacyFormSubmission(form) {
+        // Get form data
+        const formData = new FormData(form);
+        const name = form.querySelector('input[name="name"]')?.value.trim() || '';
+        const email = form.querySelector('input[name="email"]')?.value.trim() || '';
+        const phone = form.querySelector('input[name="phone"]')?.value.trim() || '';
+        const message = form.querySelector('textarea[name="message"]')?.value.trim() || '';
+        
+        // Basic validation
+        if (!name || !email || !phone || !message) {
+            showNotification('Vui lòng điền đầy đủ thông tin!', 'error');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showNotification('Email không hợp lệ!', 'error');
+            return;
+        }
+        
+        // Phone validation (Vietnamese phone number format)
+        const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
+        const cleanPhone = phone.replace(/\s/g, '');
+        if (!phoneRegex.test(cleanPhone)) {
+            showNotification('Số điện thoại không hợp lệ!', 'error');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitButton = form.querySelector('button[type="submit"]');
+        if (submitButton) {
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Đang gửi...';
+            submitButton.disabled = true;
+            
+            setTimeout(() => {
+                showNotification('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.', 'success');
+                form.reset();
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 1500);
+        }
+    }
+    
     // Field validation function
     function validateField(field) {
         const value = field.value.trim();
         const type = field.type;
+        const name = field.name;
         
         // Remove existing error styling
         field.classList.remove('error');
-        const existingError = field.parentNode.querySelector('.error-message');
-        if (existingError) {
-            existingError.remove();
+        const fieldGroup = field.closest('.form-group');
+        if (fieldGroup) {
+            fieldGroup.classList.remove('error');
+            const existingError = fieldGroup.querySelector('.error-message');
+            if (existingError) {
+                existingError.textContent = '';
+            }
         }
         
         let isValid = true;
         let errorMessage = '';
         
-        if (!value && field.hasAttribute('required')) {
+        // Check if field is required
+        if (field.hasAttribute('required') && !value) {
             isValid = false;
             errorMessage = 'Trường này là bắt buộc';
         } else if (value) {
+            // Specific validations based on field type/name
             switch (type) {
                 case 'email':
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -91,21 +119,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     break;
                 case 'tel':
-                    const phoneRegex = /^(\+84|84|0)[3|5|7|8|9][0-9]{8}$/;
-                    if (!phoneRegex.test(value.replace(/\s/g, ''))) {
+                    const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
+                    const cleanPhone = value.replace(/\s/g, '');
+                    if (!phoneRegex.test(cleanPhone)) {
                         isValid = false;
-                        errorMessage = 'Số điện thoại không hợp lệ';
+                        errorMessage = 'Số điện thoại không hợp lệ (10 số, bắt đầu bằng 03/05/07/08/09)';
                     }
                     break;
+            }
+            
+            // Additional validations based on field name
+            if (name === 'name' && value.length < 2) {
+                isValid = false;
+                errorMessage = 'Họ tên phải có ít nhất 2 ký tự';
+            } else if (name === 'message' && value.length < 10) {
+                isValid = false;
+                errorMessage = 'Tin nhắn phải có ít nhất 10 ký tự';
             }
         }
         
         if (!isValid) {
             field.classList.add('error');
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message';
-            errorDiv.textContent = errorMessage;
-            field.parentNode.appendChild(errorDiv);
+            if (fieldGroup) {
+                fieldGroup.classList.add('error');
+                const errorElement = fieldGroup.querySelector('.error-message');
+                if (errorElement) {
+                    errorElement.textContent = errorMessage;
+                }
+            }
         }
         
         return isValid;
@@ -154,4 +195,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 300);
     }
+    
+    // Phone number formatting utility
+    function formatPhoneNumber(input) {
+        let value = input.value.replace(/\D/g, ''); // Remove non-digits
+        
+        if (value.length > 10) {
+            value = value.slice(0, 10);
+        }
+        
+        // Format as: 0xxx xxx xxx
+        if (value.length > 6) {
+            value = value.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
+        } else if (value.length > 3) {
+            value = value.replace(/(\d{4})(\d{0,3})/, '$1 $2');
+        }
+        
+        input.value = value;
+    }
+    
+    // Add phone formatting to all phone inputs
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            formatPhoneNumber(this);
+        });
+    });
 });
