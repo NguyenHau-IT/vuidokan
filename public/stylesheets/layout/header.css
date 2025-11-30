@@ -5,7 +5,7 @@
   backdrop-filter: blur(12px); /* làm mờ nền */
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25); /* viền kính */
-  padding: 12px 0;
+  padding: 5px 0;
   z-index: 9999 !important;
 }
 
@@ -117,18 +117,18 @@
     min-width: auto;
     padding: 8px 16px;
   }
-  
+
   .icon-nav .nav-text {
     position: static;
     opacity: 1;
     transform: none;
     margin-left: 8px;
   }
-  
+
   .icon-nav i {
     transform: none !important;
   }
-  
+
   .icon-nav:hover i {
     transform: none;
   }
